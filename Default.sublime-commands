@@ -1,0 +1,12 @@
+[
+    {
+        "caption": "gmilk: quick panel",
+        "command": "milk_grep",
+        "args": {}
+    },
+    {
+        "caption": "gmilk: new file",
+        "command": "milk_grep_new_file",
+        "args": {}
+    }
+]
