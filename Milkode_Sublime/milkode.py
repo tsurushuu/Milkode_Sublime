@@ -45,7 +45,12 @@ class MilkGrepCommand(sublime_plugin.WindowCommand):
             if l == '':
                 continue
             tempList = l.split(':')
-            if tempList[2].isdigit():
+            fst = ''
+            scd = ''
+            if tempList[1].isdigit():
+                fst = (':').join(tempList[:2])
+                scd = (':').join(tempList[2:])
+            elif tempList[2].isdigit():
                 fst = (':').join(tempList[:3])
                 scd = (':').join(tempList[3:])
             self.lines.append([scd, fst])

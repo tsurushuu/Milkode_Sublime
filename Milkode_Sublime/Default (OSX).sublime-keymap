@@ -1,0 +1,4 @@
+[
+	{ "keys": ["ctrl+alt+m"], "command": "milk_grep" },
+	{ "keys": ["ctrl+alt+shift+m"], "command": "milk_grep_new_file" }
+]
