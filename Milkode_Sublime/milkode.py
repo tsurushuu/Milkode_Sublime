@@ -7,11 +7,14 @@ import subprocess
 class MilkGrepNewFileCommand(sublime_plugin.WindowCommand):
     def panel_search_done(self, str):
         pipe = subprocess.Popen('gmilk -a ' + str, shell=True, stdout=subprocess.PIPE).stdout
-        results = pipe.read()
+        results = unicode(pipe.read(), 'cp932')
         pipe.close()
         newv = self.window.new_file()
+        newv.set_name('gmilk result')
+        newv.set_syntax_file('Packages/Milkode_Sublime/gmilk Results.tmLanguage')
+        newv.set_scratch(True)
         e = newv.begin_edit()
-        print results
+        # print results
         newv.insert(e, 0, results)
         newv.end_edit(e)
 
